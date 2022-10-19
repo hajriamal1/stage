@@ -1,0 +1,19 @@
+
+
+
+
+:host{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+mat-drawer{
+    width:220px;
+    border-right:none;
+}
+mat-drawer-container{
+    height: 100%;
+}
+mat-drawer-conten{
+    padding: 20px;
+}

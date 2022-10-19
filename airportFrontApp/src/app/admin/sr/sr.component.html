@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2><b>Services</b></h2>
+          </div>
+          <div class="col-sm-6">
+            <a class="btn btn-success" data-toggle="modal"  ><i class="material-icons">&#xE147;</i> <span>Ajouter</span></a>
+        </div>
+        </div>
+      </div>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr >
+          
+           
+            <th>Service</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+   
+          
+          <tr *ngFor="let item of data" >
+            
+            <td> {{item.nom}}</td>
+            <td> {{item.description}} </td>
+            <td> {{item.prix}} </td>
+            <td >
+   
+              <mat-icon style="-webkit-text-fill-color:#0071BC" >edit</mat-icon>
+
+              <mat-icon style="-webkit-text-fill-color:red" >delete</mat-icon>
+              
+              </td>
+              
+          </tr>
+      
+        
+        </tbody>
+      </table>
+     
+  </div>
+
+   

@@ -1,0 +1,45 @@
+<div class="container">  
+    <mat-card class="example-card" style="margin-bottom: 5%;">
+    
+        <div class="table-title">
+          <div class="row">
+                <div class="col-sm-4">
+                <h2> <b>News</b></h2>
+                </div>
+                <div class="col-sm-4" style="/* margin: auto; */margin-top: 1%;">
+                    <div class="form-group">
+                
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+       
+   
+
+  </mat-card>
+
+
+<div *ngFor="let item of data">
+<mat-card class="example-card"  style="margin-bottom: 1px;" >
+   <div class="card">
+    <div style="text-align:center"><img mat-card-image="" src={{item.photo}} height="120px" width="50px"></div>
+
+    
+</div>
+<mat-card-header>
+  
+  <mat-card-title>{{item.titre}}</mat-card-title>
+</mat-card-header>
+
+<mat-card-content>
+  <p>
+   {{item.contenu}}
+  </p>
+  
+</mat-card-content>
+
+
+</mat-card>
+</div>  
+</div>

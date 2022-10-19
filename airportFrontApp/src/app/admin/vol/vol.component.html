@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2><b>Vols</b></h2>
+          </div>
+          <div class="col-sm-6">
+            <a class="btn btn-success" data-toggle="modal" (click)="open1(modalAdd)" ><i class="material-icons">&#xE147;</i> <span>Ajouter</span></a>
+        </div>
+        </div>
+      </div>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr >
+          
+           
+           
+            <th>Num</th>
+            <th>Ville Départ</th>
+            <th>Ville Arrivée</th>
+            <th>Date</th>
+            <th>Action</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+   
+          
+          <tr *ngFor="let item of data" >
+            
+            <td> {{item.id}}</td>
+            <td> {{item.villeDepart}} </td>
+            <td> {{item.villeArrivee}} </td>
+            <td> {{item.dateVol}} </td>
+            <td >
+   
+              <mat-icon style="-webkit-text-fill-color:#0071BC" >edit</mat-icon>
+
+              <mat-icon style="-webkit-text-fill-color:red" >delete</mat-icon>
+              
+              </td>
+              
+          </tr>
+      
+        
+        </tbody>
+      </table>
+     
+  </div>
+
+    <!-- ADD Vol-->
+    <ng-template #modalAdd let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Ajouter un vol</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    
+            <div class="form-group">   
+              <p>Ville départ</p>
+              </div>
+              <div class="form-group">
+                <input type="text"  class="form-control" name="villeDepart"  id="villeDepart"  ngModel required >
+              </div>
+    
+              <div class="form-group">   
+                <p>Ville Arrivée</p>
+                </div>
+                <div class="form-group">
+                  <input type="text"  class="form-control" name="villeArrivee" id="villeArrivee"   ngModel required >
+                </div>
+    
+            <div class="form-group">   
+            <p>Date</p>
+            </div>
+            <div class="form-group">
+              <input type="date"  class="form-control" name="date" id="date"  ngModel required >
+            </div>
+              
+             
+                   
+              <div class="modal-footer">
+                
+          
+                  <button class="btn btn-success" type="submit" [disabled]="f.invalid"  >Ajouter</button>
+                  <button type="button" class="btn btn-dark" type="reset">Annuler</button>
+                  
+                
+              </div>
+          </form>
+        </div>
+        
+      </ng-template> 

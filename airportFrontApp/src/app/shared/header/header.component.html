@@ -1,0 +1,61 @@
+<h5>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+    <img src="assets/logo.png" alt="userImg" height="40px" width="130px" routerLink="/home"> 
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/home">Accueil <span class="sr-only"></span></a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#">Reserver </a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/services">Nos Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/news">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/plan">Plan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/destination">Destinations</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link"  *ngIf="verifRole() && service.loggedIn()" routerLink="/admin/users">Admin</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="service.loggedIn()" routerLink="/profil">Mon Compte </a> 
+          </li>
+
+                    
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login" *ngIf="!service.loggedIn()">Login </a> 
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home" *ngIf="service.loggedIn()" (click)="service.logoutUser()">Logout </a> 
+          </li>
+
+      </ul>
+     
+    </div>
+    
+    </div>
+
+
+</nav>
+
+
+</h5>
